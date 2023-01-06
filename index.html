@@ -16,7 +16,7 @@
     <h1>Welcome to my Presention</h1>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro soluta libero possimus cumque unde architecto odit. Commodi libero itaque accusantium necessitatibus odio similique exercitationem veniam quaerat porro voluptates nam, minima culpa nesciunt atque quibusdam nulla, consequuntur repudiandae! Assumenda, dolores adipisci!</p>
     <div>
-      <a href="page-2" class="btn">
+      <a href="#page-2" class="btn">
         Next Page <i class="fas fa-arrow-circle-down"></i>
       </a>
     </div>
@@ -26,10 +26,10 @@
     <h1>Page 2</h1>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro soluta libero possimus cumque unde architecto odit. Commodi libero itaque accusantium necessitatibus odio similique exercitationem veniam quaerat porro voluptates nam, minima culpa nesciunt atque quibusdam nulla, consequuntur repudiandae! Assumenda, dolores adipisci!</p>
     <div>
-      <a href="page-1" class="btn btn-dark">
+      <a href="#page-1" class="btn btn-dark">
         Prev Page <i class="fas fa-arrow-circle-up"></i>
       </a>
-      <a href="page-3" class="btn">
+      <a href="#page-3" class="btn">
         Next Page <i class="fas fa-arrow-circle-down"></i>
       </a>
     </div>
@@ -39,10 +39,10 @@
     <h1>Page 3</h1>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro soluta libero possimus cumque unde architecto odit. Commodi libero itaque accusantium necessitatibus odio similique exercitationem veniam quaerat porro voluptates nam, minima culpa nesciunt atque quibusdam nulla, consequuntur repudiandae! Assumenda, dolores adipisci!</p>
     <div>
-      <a href="page-2" class="btn btn-dark">
+      <a href="#page-2" class="btn btn-dark">
         Prev Page <i class="fas fa-arrow-circle-up"></i>
       </a>
-      <a href="page-4" class="btn">
+      <a href="#page-4" class="btn">
         Next Page <i class="fas fa-arrow-circle-down"></i>
       </a>
     </div>
@@ -52,10 +52,30 @@
     <h1>Page 4</h1>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro soluta libero possimus cumque unde architecto odit. Commodi libero itaque accusantium necessitatibus odio similique exercitationem veniam quaerat porro voluptates nam, minima culpa nesciunt atque quibusdam nulla, consequuntur repudiandae! Assumenda, dolores adipisci!</p>
     <div>
-      <a href="page-3" class="btn btn-dark">
+      <a href="#page-3" class="btn btn-dark">
         Prev Page <i class="fas fa-arrow-circle-up"></i>
       </a>
     </div>
   </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+  <script>
+    // Smooth Scroll
+    $('.btn').on('click', function(event){
+      if(this.hash !== '') {
+        event.preventDefault();
+
+        const hash = this.hash;
+
+        $('html, body').animate(
+          {
+            scrollTop: $(hash).offset().top,
+          },
+          800
+        );
+      }
+    });
+  </script>
 </body>
 </html>
